@@ -1,31 +1,3 @@
 .App {
   background-color: #282c34;
 }
-
-.Page-logo {
-  height: 20vmin;
-  padding: 5vmin;
-  /*pointer-events: none;*/
-}
-
-.Header-text {
-  padding: 10vmin;
-  font-size: calc(20px + 2vmin);
-  line-height: 2.0;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .Page-logo {
-    border-radius: 50%;
-  }
-}
-
-.Top-window {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: start;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}

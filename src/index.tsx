@@ -2,7 +2,7 @@ import React from 'react';
 // import ReactDOM from 'react-dom';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import './assets/timelineBox.css';
+import './assets/Timeline_box.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 

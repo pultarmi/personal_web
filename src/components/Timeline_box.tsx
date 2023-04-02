@@ -1,20 +1,20 @@
-import React, { useRef, useEffect } from 'react';
+import React, {useRef, useEffect} from 'react';
 
 interface FadeInProps {
 	children: React.ReactNode;
+	topic: string;
 }
 
-function FadeIn(props: FadeInProps) {
+function Timeline_box(props: FadeInProps) {
 	const ref = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(entries => {
 			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					// Add the "is-visible" class when the component is in view
-					if (entry.isIntersecting && ref.current) {
-						ref.current.classList.add('is-visible');
-					}
+				if (entry.isIntersecting && ref.current) {
+					ref.current.classList.add('is-visible');
+				} else {
+					ref.current?.classList.remove('is-visible');
 				}
 			});
 		});
@@ -31,10 +31,11 @@ function FadeIn(props: FadeInProps) {
 	}, []);
 
 	return (
-		<div ref={ref} className="fade-in">
+		<div ref={ref} className="Timeline_box fade-in">
+			<h1>{props.topic}</h1>
 			{props.children}
 		</div>
 	);
 }
 
-export default FadeIn;
+export default Timeline_box;
