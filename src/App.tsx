@@ -39,7 +39,7 @@ export default class App extends Component {
 					<Timeline_box topic="My poject 2">
 						Nullam at arcu a est sollicitudin euismod. Etiam commodo dui eget wisi. In enim a arcu imperdiet malesuada. Pellentesque pretium lectus id turpis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Mauris metus. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Nulla non arcu lacinia neque faucibus fringilla.
 					</Timeline_box>
-					<Timeline_box topic="My poject 3">
+					<Timeline_box topic="My poject 3" leftAlign={true}>
 						Nullam at arcu a est sollicitudin euismod. Etiam commodo dui eget wisi. In enim a arcu imperdiet malesuada. Pellentesque pretium lectus id turpis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Mauris metus. Mauris dolor felis, sagittis at, luctus sed, aliquam non, tellus. Nulla non arcu lacinia neque faucibus fringilla.
 					</Timeline_box>
 				</div>
