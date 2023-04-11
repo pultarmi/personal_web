@@ -1,7 +1,13 @@
 .Page-logo {
     height: 20vmin;
-    padding: 5vmin;
+    padding: 0px;
+    margin: 5vmin;
     /*pointer-events: none;*/
+}
+
+.Page-logo:is(:hover){
+    outline: 2px solid blue;
+    outline-offset: 3px;
 }
 
 .Top-window-body {
@@ -21,7 +27,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: start;
+    justify-content: flex-start;
     /*font-size: calc(10px + 2vmin);*/
     color: white;
 }

@@ -1,8 +1,10 @@
 import React, {useRef, useEffect} from 'react';
+import { Link } from "react-scroll";
 
 interface FadeInProps {
 	children: React.ReactNode;
 	topic: string;
+	leftAlign?: boolean;
 }
 
 function Timeline_box(props: FadeInProps) {
@@ -31,7 +33,8 @@ function Timeline_box(props: FadeInProps) {
 	}, []);
 
 	return (
-		<div ref={ref} className="Timeline_box fade-in">
+		<div ref={ref} className={`Timeline_box fade-in ${props.leftAlign ? "leftAlign" : ""}`}>
+			<footer><Link to="/react">Tell me more</Link></footer>
 			<h1>{props.topic}</h1>
 			{props.children}
 		</div>

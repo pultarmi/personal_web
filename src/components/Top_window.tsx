@@ -18,7 +18,7 @@ export default class Top_window extends Component {
                 </header>
 
                 <div className="Top-window-body">
-                    <h1>Full-stack engineer with background in AI and extensive knowledge of computer vision and camera feed processing.</h1>
+                    <h1>Full-stack engineer with background in AI specialty in computer vision and camera feed processing.</h1>
 
                   <Link to="my-other-component" smooth={true} duration={500} spy={true}>
                     Scroll to my other component
