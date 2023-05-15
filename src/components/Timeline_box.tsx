@@ -33,11 +33,12 @@ function Timeline_box(props: FadeInProps) {
 	}, []);
 
 	return (
+		<Link to="/react">
 		<div ref={ref} className={`Timeline_box fade-in ${props.leftAlign ? "leftAlign" : ""}`}>
-			<footer><Link to="/react">Tell me more</Link></footer>
 			<h1>{props.topic}</h1>
 			{props.children}
 		</div>
+		</Link>
 	);
 }
 

@@ -1,68 +1,75 @@
 .Timeline_box{
     position: relative;
-    /*float: right;*/
-    /*flex-grow: 1;*/
     margin-left: auto;
     margin-right: 2rem;
 
     border-radius: 10px;
-    margin-bottom: -40px;
     padding: 20px;
     text-align: center;
     width: 45%;
-    background-color: azure;
+    background-color: #d6e1e1;
     font-size: calc(10px + 1vmin);
-    /*padding-top: 60px;*/
 }
 
-.Timeline_box > h1{
+.Timeline_box h1{
     position: relative;
-    /*float: center;*/
-
-    /*position: absolute;*/
-    /*left: 50%;*/
-    /*transform: translate(-50%, -50%);*/
 }
 
 .Timeline_box{
     position: relative;
-    float: left;
-    /*float: center;*/
-
-    /*position: absolute;*/
-    /*left: 50%;*/
-    /*transform: translate(-50%, -50%);*/
+    margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
-.Timeline_box.leftAlign{
-    margin-right: auto;
-    margin-left: 2rem;
+@media (min-width: 800px) {
+    .Timeline_box{
+        margin-left: 2rem;
+        float: left;
+    }
+
+    .Timeline_box.leftAlign{
+        margin-right: 2rem;
+        margin-left: 2rem;
+        float: right;
+    }
 }
 
-.Timeline_box > footer{
-    position: absolute;
-    /*left: 100%;*/
-    right: 30px;
-    /*transform: translate(-50%, -50%);*/
+/*.Timeline_box.leftAlign > footer{*/
+/*    position: absolute;*/
+/*    right: 30px;*/
+/*    left: auto;*/
+/*}*/
 
-    /*position: relative;*/
-    /*float: right;*/
+/*.Timeline_box > footer{*/
+/*    position: absolute;*/
+/*    left: 30px;*/
 
-    padding: 0.5em;
-    background-color: #282c34;
-    color: white;
-    z-index: 1;
+/*    padding: 0.5em;*/
+/*    background-color: #282c34;*/
+/*    color: white;*/
+/*    z-index: 1;*/
+/*}*/
+
+@media (max-width: 1200px) {
+    .Timeline_box.leftAlign > footer{
+        right: auto;
+        left: 30px;
+    }
 }
 
-.Timeline_box > footer:hover{
-    background-color: azure;
-    color: black;
+/*.Timeline_box > footer:hover{*/
+/*    background-color: azure;*/
+/*    color: black;*/
+/*    cursor: pointer;*/
+/*}*/
+
+.Timeline_box:hover{
     cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .fade-in {
     opacity: 0;
-    /*transition: opacity 2s ease-in-out;*/
     transition: opacity 1s cubic-bezier(0.4, 0, 1, 5);
 }
 
