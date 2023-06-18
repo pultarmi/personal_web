@@ -3,15 +3,25 @@ frontend:
   phases:
     preBuild:
       commands:
+        - cd frontend
         - npm ci
-    # IMPORTANT - Please verify your build commands
     build:
       commands:
         - npm run build
   artifacts:
-    # IMPORTANT - Please verify your build output directory
-#    baseDirectory: /
     baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+backend:
+  phases:
+    preBuild:
+      commands:
+        - cd backend
+  artifacts:
+    baseDirectory: .
     files:
       - '**/*'
   cache:

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Outlet, Link } from "react-router-dom";
+import $ from "jquery";
 
 import Top_window from "components/Top_window";
 import Timeline_box from "components/Timeline_box";
@@ -9,8 +10,21 @@ import Timeline_box from "components/Timeline_box";
 
 
 export default function PageMenu() {
+	// $(document).ready(function() {
+	// 	// Go to the dev.to tags page and get the HTML code
+	// 	$.get("https://www.restauraceveranda.com/pondeli", (html) => {
+	// 		// Find elements with crayons-tag class inside the HTML page received
+	// 		[...$(html).find("span")].forEach((el) => {
+	// 			// Get the text(tag name) inside of each element with crayons-tag class
+	// 			const text = $(el).html();
+	// 			// Append each tag to a list
+	// 			$("#hohoho").append("<li>"+text+"</li>");
+	// 		})
+	// 	})
+	// });
+
 	return (
-		<div>
+		<div id="hohoho">
 			Hello
 		</div>
 	);
