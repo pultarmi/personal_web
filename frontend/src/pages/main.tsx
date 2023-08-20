@@ -6,13 +6,11 @@ import Top_window from 'components/Top_window';
 import Timeline_box from "components/Timeline_box";
 
 
-export default class MainPage extends Component {
-	render() {
+export default function MainPage() {
 		return (
 			<div className="App">
 				<Top_window/>
 				<div className="Timeline_window" id="my-other-component">
-					<Link to={`contacts/1`}>Your Name</Link>
 					<Timeline_box topic="My poject 1" leftAlign={true}>
 						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam sapien elit, consequat eget, tristique non, venenatis quis, ante. Mauris tincidunt sem sed arcu. Quisque porta. Praesent dapibus. Suspendisse sagittis ultrices augue. Fusce suscipit libero eget elit. Nulla est. Duis sapien nunc, commodo et, interdum suscipit, sollicitudin et, dolor. Nullam dapibus fermentum ipsum. In dapibus augue non sapien. Duis viverra diam non justo. Duis risus. Cras elementum. Nullam lectus justo, vulputate eget mollis sed, tempor sed magna. Vivamus ac leo pretium faucibus. Duis bibendum, lectus ut viverra rhoncus, dolor nunc faucibus libero, eget facilisis enim ipsum id lacus. Fusce tellus. Fusce wisi. Aliquam id dolor.
 					</Timeline_box>
@@ -28,5 +26,4 @@ export default class MainPage extends Component {
 				</div>
 			</div>
 		);
-	}
 }

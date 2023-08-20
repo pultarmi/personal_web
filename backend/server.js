@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const puppeteer = require("puppeteer");
 
 const app = express();
 const PORT = 3030;
@@ -10,6 +11,56 @@ app.use(bodyParser.json());
 // Routes
 app.get('/', (req, res) => {
 	res.send('Hello, World!');
+});
+
+
+async function tutorial() {
+	try {
+		// Specify the URL of the dev.to tags web page
+		const URL = "https://www.restauraceveranda.com/pondeli";
+
+		// Launch the headless browser
+		const browser = await puppeteer.launch();
+		const page = await browser.newPage();
+		// Go to the webpage
+		await page.goto(URL);
+
+		// Perform a function within the given webpage context
+		const data = await page.evaluate(() => {
+			results = [];
+
+			// Select all elements with crayons-tag class
+			const items = document.querySelectorAll("#comp-jynb1a0n > p span:only-child");
+			items.forEach(item => {
+				// Get innerText of each element selected and add it to the array
+				results.push(item.innerText);
+			});
+			results = results.filter(str => /\S/.test(str));
+			results = results.filter((value, index) => results.indexOf(value) === index);
+			return results;
+		});
+
+		const d = new Date();
+		let day = d.getDay();
+
+		// Print the result and close the browser
+		await browser.close();
+		return data;
+	} catch (error) {
+		console.error(error);
+	}
+}
+
+// tutorial();
+
+app.get('/api/menu/jaguska', async (req, res) => {
+	const puppeteer = require("puppeteer");
+
+	data = await tutorial();
+
+	console.log(data);
+	res.set('Access-Control-Allow-Origin', '*');
+	res.json(data);
 });
 
 app.get('/api/users', (req, res) => {

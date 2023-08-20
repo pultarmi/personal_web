@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from 'react';
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 
 interface FadeInProps {
 	children: React.ReactNode;
@@ -7,7 +7,7 @@ interface FadeInProps {
 	leftAlign?: boolean;
 }
 
-function Timeline_box(props: FadeInProps) {
+export default function Timeline_box(props: FadeInProps) {
 	const ref = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
@@ -33,13 +33,11 @@ function Timeline_box(props: FadeInProps) {
 	}, []);
 
 	return (
-		<Link to="/react">
-		<div ref={ref} className={`Timeline_box fade-in ${props.leftAlign ? "leftAlign" : ""}`}>
-			<h1>{props.topic}</h1>
-			{props.children}
-		</div>
+		<Link to="/react" style={{ textDecoration: 'none' }}>
+			<div ref={ref} className={`Timeline_box fade-in ${props.leftAlign ? "leftAlign" : ""}`}>
+					<h1>{props.topic}</h1>
+					{props.children}
+			</div>
 		</Link>
 	);
 }
-
-export default Timeline_box;
