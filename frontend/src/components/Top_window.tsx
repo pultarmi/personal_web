@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-scroll";
 
+import styles from "../assets/Top_window.css";
+
 import linkedin from "../assets/linkedin.svg";
 
 
@@ -16,10 +18,11 @@ export default function Top_window() {
             </header>
 
             <div className="Top-window-body">
-                <h1>Full-stack engineer with background in AI specialty in computer vision and camera feed processing.</h1>
+                <h1>Milan Pultar</h1>
+                <h2>Building the future, one line at a time.</h2>
 
               <Link to="my-other-component" smooth={true} duration={500} spy={true}>
-                Scroll to my other component
+                Curriculum Vitae
               </Link>
             </div>
 
