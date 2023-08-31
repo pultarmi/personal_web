@@ -6,7 +6,7 @@ import {
 
 import './App.css';
 import './assets/Timeline_box.css';
-import './assets/Top_window.css';
+import './assets/Top_window.module.css';
 import './assets/Timeline_window.css';
 import MainPage from "pages/MainPage";
 import UserPage from "pages/project1";

@@ -1,23 +1,23 @@
-.Page-logo {
+.PageLogo {
     height: 20vmin;
     padding: 0px;
     margin: 5vmin;
     /*pointer-events: none;*/
 }
 
-.Top-window-body {
+.TopWindowBody {
     padding: 10vmin;
     font-size: calc(20px);
     line-height: 2.0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .Page-logo {
+    .PageLogo {
         border-radius: 50%;
     }
 }
 
-.Top-window {
+.TopWindow {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
