@@ -7,7 +7,7 @@ interface FadeInProps {
 	leftAlign?: boolean;
 }
 
-export default function Timeline_box(props: FadeInProps) {
+export default function TimelineBox(props: FadeInProps) {
 	const ref = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {

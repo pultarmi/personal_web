@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-scroll";
 import { Outlet, Link as LinkRouter } from "react-router-dom";
 
-import styles from "../assets/Top_window.module.css";
+import styles from "../styles/TopWindow.module.css";
 
 import linkedin from "../assets/linkedin.svg";
 
 
-export default function Top_window() {
+export default function TopWindow() {
     const runonClick = (e:any) => {
       window.location.href="mailto:milan.pultar@gmail.com";
       e.preventDefault();
@@ -31,9 +31,9 @@ export default function Top_window() {
                 </LinkRouter>
               <br></br>
 
-                <Link to="my-other-component" smooth={true} duration={500} spy={true}>
-                    Curriculum Vitae
-                </Link>
+                {/*<Link to="my-other-component" smooth={true} duration={500} spy={true}>*/}
+                {/*    Curriculum Vitae*/}
+                {/*</Link>*/}
             </div>
 
         </div>

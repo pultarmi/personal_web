@@ -5,12 +5,12 @@ import {
 } from "react-router-dom";
 
 import './App.css';
-import './assets/Timeline_box.css';
-import './assets/Top_window.module.css';
-import './assets/Timeline_window.css';
+import './styles/TimelineBox.css';
+import './styles/TopWindow.module.css';
+import './styles/TimelineWindow.css';
 import MainPage from "pages/MainPage";
 import UserPage from "pages/project1";
-import PageMenu from "pages/menu";
+import PageMenu from "pages/FoodMenu";
 import Project_Test from "pages/project1";
 import alignment from "pages/Alignment";
 import DragDrop from "pages/Alignment";

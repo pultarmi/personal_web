@@ -94,6 +94,35 @@ app.delete('/api/users/:id', (req, res) => {
 	res.sendStatus(204);
 });
 
+app.post('/api/upload_image', (req, res, next) => {
+	console.log("Uploading image");
+	upload.single("file" /* name attribute of <file> element in your form */),
+		(req, res) => {
+			const tempPath = req.file.path;
+			const targetPath = path.join(__dirname, "./uploads/image.png");
+
+			if (path.extname(req.file.originalname).toLowerCase() === ".png") {
+				fs.rename(tempPath, targetPath, err => {
+					if (err) return handleError(err, res);
+
+					res
+						.status(200)
+						.contentType("text/plain")
+						.end("File uploaded!");
+				});
+			} else {
+				fs.unlink(tempPath, err => {
+					if (err) return handleError(err, res);
+
+					res
+						.status(403)
+						.contentType("text/plain")
+						.end("Only .png files are allowed!");
+				});
+			}
+		}
+})
+
 // Start the server
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}`);

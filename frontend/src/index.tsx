@@ -1,12 +1,10 @@
-
-// import './require.js';
 import React from 'react';
 // import ReactDOM from 'react-dom';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 
 import './index.css';
-import './assets/Timeline_box.css';
+import './styles/TimelineBox.css';
 import App from './App';
 
 const rootElement = document.getElementById('root');
