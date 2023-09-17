@@ -1,11 +1,9 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
+import axios from 'axios';
 
 import TopWindow from "components/TopWindow";
 import TimelineBox from "components/TimelineBox";
-
-import axios from 'axios';
-// const cheerio = require("cheerio");
 
 
 export default function PageMenu() {

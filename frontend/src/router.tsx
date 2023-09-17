@@ -1,7 +1,7 @@
-import React, {Component} from "react";
+import React from "react";
 import { createBrowserRouter } from 'react-router-dom';
 
-import MainPage from "./views/MainPage";
+import MainView from "./views/MainView";
 import PageMenu from "./views/FoodMenu";
 import Project_Test from "./views/project1";
 import alignment from "./views/Alignment";
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: "/",
-				element: <MainPage/>,
+				element: <MainView/>,
 			},
 			{
 				path: "/alignment",

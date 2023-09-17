@@ -1,6 +1,8 @@
 import React, {useRef, useEffect} from 'react';
 import { Link } from "react-router-dom";
 
+import styles from "../styles/TimelineBox.module.css";
+
 interface FadeInProps {
 	children: React.ReactNode;
 	topic: string;
@@ -33,11 +35,15 @@ export default function TimelineBox(props: FadeInProps) {
 	}, []);
 
 	return (
-		<Link to="/react" style={{ textDecoration: 'none' }}>
-			<div ref={ref} className={`Timeline_box fade-in ${props.leftAlign ? "leftAlign" : ""}`}>
-					<h1>{props.topic}</h1>
+		// <Link to="/react" style={{ textDecoration: 'none' }}>
+		<div className={styles.TimelineRow}>
+			<div ref={ref} className={`${styles.TimelineBox} fade-in ${props.leftAlign ? "leftAlign" : ""}`}>
+				<h3>{props.topic}</h3>
+				<div>
 					{props.children}
+				</div>
 			</div>
-		</Link>
+		</div>
+		// </Link>
 	);
 }
