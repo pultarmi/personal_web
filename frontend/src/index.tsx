@@ -1,29 +1,52 @@
-
-// import './require.js';
-import React from 'react';
-// import ReactDOM from 'react-dom';
-import ReactDOM from 'react-dom/client';
+import React, {useEffect, useState} from 'react';
+import { createRoot } from 'react-dom/client';
+import { RouterProvider } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 import './index.css';
-import './assets/Timeline_box.css';
-import App from './App';
+import './styles/TimelineBox.module.css';
+import router from 'router';
 
-const rootElement = document.getElementById('root');
-if (rootElement) {
-    const root = ReactDOM.createRoot(rootElement);
-    root.render(
-      <React.StrictMode>
-          <App />
-      </React.StrictMode>
-    );
+const App = () => {
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
+
+  useEffect(() => {
+    // Update window width when the window is resized
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component is unmounted
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+    <div>
+      {windowWidth < 1000 ? (
+        <p>Mobile version is not ready. Please open on desktop with more than 1000px in width.</p>
+      ) : (
+        <RouterProvider router={router} />
+      )}
+    </div>
+  );
+};
+
+const root = createRoot(document.getElementById('root') as HTMLElement);
+if (root) {
+  root.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+  );
 }
 
-// ReactDOM.render(<App />, document.getElementById('root'));
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Learn more: https://bit.ly/CRA-vitals
 reportWebVitals((metric: any) => {
     console.log(metric);
 });
+
+reportWebVitals(console.log);
