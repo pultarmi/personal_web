@@ -4,7 +4,7 @@ import { RouterProvider } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 import './index.css';
-import './styles/TimelineBox.module.css';
+import './styles/TimelineBox.module.scss';
 import router from 'router';
 
 const App = () => {

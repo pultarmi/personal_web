@@ -1,0 +1,9 @@
+$col1: #202328;
+$col2: #ffffff;
+
+:global {
+  .hidden{
+    position: fixed;
+    opacity: 0;
+  }
+}

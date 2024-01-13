@@ -9,20 +9,9 @@
       "purpose": "any"
     },
     {
-      "src": "favicon192.png",
+      "src": "favicon128.png",
       "type": "image/png",
       "sizes": "192x192"
-    },
-    {
-      "src": "favicon512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    },
-    {
-      "src": "favicon192_maskable.png",
-      "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "maskable"
     }
   ],
   "start_url": ".",

@@ -1,37 +1,36 @@
+@import "globals";
+
 .TimelineBox{
     position: relative;
-    margin-left: auto;
-    margin-right: 2rem;
+    //margin-left: auto;
+    //margin-right: 2rem;
 
     border-radius: 10px;
     padding: 20px;
-    text-align: center;
+    //text-align: center;
     width: 45%;
-    background-color: #d6e1e1;
+    background-color: $col2;
     font-size: calc(10px + 1vmin);
-}
 
-.TimelineBox{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 
     text-align: left;
-}
 
-.TimelineBox :is(h1, h2, h3, h4, h5, h6){
-    margin-top: 0px;
-    /*position: relative;*/
-    /*float: left;*/
-    /*width: 100%;*/
-}
 
-.TimelineBox{
-    position: relative;
-    margin: 0 auto;
+    //position: relative;
+    //margin: 0 auto;
     margin-bottom: 2rem;
-    color: black;
+    //color: black;
     /*text-decoration: inherit;*/
+
+    &:is(h1, h2, h3, h4, h5, h6){
+        margin-top: 0px;
+        /*position: relative;*/
+        /*float: left;*/
+        /*width: 100%;*/
+    }
 }
 
 :root {
@@ -65,11 +64,13 @@
 /*    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;*/
 /*}*/
 
-:global .fade-in {
-    opacity: 0;
-    transition: opacity 1s cubic-bezier(0.4, 0, 1, 5);
-}
+:global {
+    .fade-in{
+        opacity: 0;
+        transition: opacity 1s cubic-bezier(0.4, 0, 1, 5);
 
-:global .fade-in.is-visible {
-    opacity: 1;
+        &.is-visible{
+            opacity: 1;
+        }
+    }
 }

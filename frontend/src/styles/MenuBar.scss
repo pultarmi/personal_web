@@ -1,0 +1,83 @@
+@import "globals";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+nav {
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+//.hidden_menu {
+//  top: -3em;
+//}
+
+.nav {
+  //width: 450px;
+  margin: 0px;
+  height: 3em;
+  border-radius: 10px;
+  //margin: 0 auto;
+  background: darken($col2, 10%);
+  color: $col1;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: top 0.3s;
+  //top: 3em;
+
+  a {
+    display: block;
+    padding: 0 16px;
+    line-height: inherit;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &__menu {
+    line-height: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &-item {
+      display: inline-block;
+      position: relative;
+
+      &:hover {
+        background-color: $col1;
+        color: $col2;
+
+        .nav__submenu {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__submenu {
+    font-weight: 300;
+    text-transform: none;
+    display: none;
+    position: absolute;
+    width: 220px;
+    background-color: $col1;
+
+    &-item {
+      &:hover {
+        //background: rgba(#000, 0.1);
+        background: #282c34;
+      }
+    }
+  }
+}

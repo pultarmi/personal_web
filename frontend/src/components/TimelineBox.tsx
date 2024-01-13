@@ -1,7 +1,7 @@
 import React, {useRef, useEffect} from 'react';
 import { Link } from "react-router-dom";
 
-import styles from "../styles/TimelineBox.module.css";
+import styles from "../styles/TimelineBox.module.scss";
 
 interface FadeInProps {
 	children: React.ReactNode;
