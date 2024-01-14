@@ -1,6 +1,7 @@
 import React, {useRef, useEffect} from 'react';
 import { Link } from "react-router-dom";
 
+// @ts-ignore
 import styles from "../styles/TimelineBox.module.scss";
 
 interface FadeInProps {

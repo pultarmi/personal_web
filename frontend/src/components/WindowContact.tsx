@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-scroll";
 import { Link as LinkRouter } from "react-router-dom";
 
-import styles from "../styles/TopWindow.module.scss";
+// @ts-ignore
+import styles from "../styles/WindowContact.module.scss";
 
 import linkedin from "../assets/linkedin.svg";
 import github from "../assets/github.svg";
 
 
-export default function TopWindow() {
+export default function WindowContact() {
   const runonClick = (e:any) => {
     window.location.href="mailto:milan.pultar@gmail.com";
     e.preventDefault();

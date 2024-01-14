@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Outlet, Link } from "react-router-dom";
 import axios from 'axios';
 
-import TopWindow from "components/TopWindow";
+import WindowContact from "components/WindowContact";
 import TimelineBox from "components/TimelineBox";
 
 

@@ -34,9 +34,10 @@ nav {
 //}
 
 .nav {
+  z-index: 2;
   //width: 450px;
-  margin: 0px;
-  height: 3em;
+  //margin: 0px;
+  //height: 3em;
   border-radius: 10px;
   //margin: 0 auto;
   background: darken($col2, 10%);
@@ -45,7 +46,6 @@ nav {
   left: 50%;
   transform: translate(-50%, 0);
   transition: top 0.3s;
-  //top: 3em;
 
   a {
     display: block;

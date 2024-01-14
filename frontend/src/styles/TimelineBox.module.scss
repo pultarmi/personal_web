@@ -8,7 +8,6 @@
 
     border-radius: 20px;
     padding: 20px;
-    //text-align: center;
     width: 45%;
     background-color: $col2;
     font-size: calc(10px + 1vmin);
@@ -19,16 +18,12 @@
 
     text-align: left;
 
-
-    //position: relative;
     //margin: 0 auto;
     margin-bottom: 2rem;
     margin-top: 2rem;
-    //color: black;
-    /*text-decoration: inherit;*/
 
     &:is(h1, h2, h3, h4, h5, h6){
-        margin-top: 0px;
+        //margin-top: 0px;
         /*position: relative;*/
         /*float: left;*/
         /*width: 100%;*/
