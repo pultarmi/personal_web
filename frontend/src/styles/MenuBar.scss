@@ -23,6 +23,16 @@ nav {
 //  top: -3em;
 //}
 
+//.nav_abs{
+//  position: absolute;
+//  top: 1em;
+//}
+//
+//.nav_fix{
+//  position: fixed;
+//  top: -3em;
+//}
+
 .nav {
   //width: 450px;
   margin: 0px;
@@ -75,8 +85,8 @@ nav {
 
     &-item {
       &:hover {
-        //background: rgba(#000, 0.1);
-        background: #282c34;
+        //background: rgba($col1, 0.1);
+        background: $col1;
       }
     }
   }

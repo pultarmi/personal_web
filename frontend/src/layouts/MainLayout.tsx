@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Outlet, Link } from "react-router-dom";
 
-import '../styles/TopWindow.module.css';
+import '../styles/TopWindow.module.scss';
 import TopWindow from 'components/TopWindow';
 import TimelineBox from "components/TimelineBox";
 import MenuBar from "components/MenuBar";

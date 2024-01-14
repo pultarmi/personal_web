@@ -1,0 +1,14 @@
+@import "globals";
+
+hr {
+  position: absolute;
+  zIndex: 0 !important;
+  left: 50vw;
+  width: 5px;
+  height: 1000px;
+}
+
+.TimelineWindow{
+  display: flex;
+  flex-direction: column;
+}

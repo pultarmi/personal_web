@@ -6,11 +6,18 @@ import MenuItem from '@mui/material/MenuItem';
 
 import "../styles/MenuBar.scss";
 
+const maxTop = 1;
+
 export default function MenuBar() {
+	const ref_menubar = useRef(null)
 	// const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-	const [top, setTop] = useState<number>(30);
-	// const bodyRef = useRef(null);
+	const [top, setTop] = useState<number>(maxTop);
 	const [fontsize, setFontsize] = useState(1);
+	const [barsize, setBarsize] = useState<number>(0)
+	const [positionMode, setPositionMode] = useState<string>("absolute")
+	const [minTop, setMinTop] = useState<number>(0)
+
+	const [absmode, setAbsmode] = useState<boolean>(true)
 
 	// const open = Boolean(anchorEl);
 	// const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -20,32 +27,66 @@ export default function MenuBar() {
 	// 	setAnchorEl(null);
 	// };
 
-	const maxTop = 2;
-	const minTop = -4;
-
-	const [show, setShow] = useState(true);
+	// const [show, setShow] = useState(true);
 	const [lastScrollY, setLastScrollY] = useState(0);
 
-	const controlNavbar = useCallback(() => {
-		if(Math.abs(window.scrollY - lastScrollY) / fontsize < 0.1){
-			return;
-		}
-		const diff = (window.scrollY - lastScrollY) / fontsize;
-		console.log(`diff ${diff}`)
+	// const controlNavbar = useCallback(() => {
+	// 	const diff_ = window.scrollY - lastScrollY
+	// 	if((diff_ >= 0 && top === minTop) || (diff_ <= 0 && top === maxTop)){
+	// 		return
+	// 	}
+	// 	if(Math.abs(diff_) / fontsize < 0.1){
+	// 		return;
+	// 	}
+	// 	const diff = (window.scrollY - lastScrollY) / fontsize;
+	//
+	// 	if (window.scrollY > lastScrollY) {
+	// 		setTop(Math.max(minTop, top - diff));
+	// 	} else {
+	// 		setTop(Math.min(maxTop, top - diff));
+	// 	}
+	//
+	// 	setLastScrollY(window.scrollY);
+	// }, [top, minTop, lastScrollY, fontsize]);
 
-		if (window.scrollY > lastScrollY) {
-			setTop(Math.max(minTop, top - diff));
+	useEffect(() => {
+		setBarsize(ref_menubar.current!.clientHeight)
+	}, [ref_menubar]);
+
+	const controlNavbar = () => {
+		// if(window.scrollY < barsize){
+		// 	setAbsmode(true)
+		// 	setTop(maxTop)
+		// 	return
+		// } else{
+		// 	setAbsmode(false)
+		// }
+
+		// if(window.scrollY >= barsize && lastScrollY < barsize){
+		// 	setTop(minTop)
+		// }
+		// else if(window.scrollY <= barsize && lastScrollY > barsize){
+		// 	setTop(minTop)
+		// }
+
+		if (window.scrollY > lastScrollY && window.scrollY > barsize) {
+			setTop(minTop)
 		} else {
-			setTop(Math.min(maxTop, top - diff));
+			// console.log(`AAAAAA`)
+			setTop(maxTop)
 		}
 
 		setLastScrollY(window.scrollY);
-	}, [top, minTop, lastScrollY, fontsize]);
+	};
 
 	useEffect(() => {
-			var htmlElement = document.documentElement;
-			setFontsize(parseFloat(window.getComputedStyle(htmlElement).fontSize));
-	}, []);
+		var htmlElement = document.documentElement;
+		setFontsize(parseFloat(window.getComputedStyle(htmlElement).fontSize));
+	}, [barsize]);
+
+	useEffect(() => {
+		setMinTop(- barsize / fontsize)
+	}, [fontsize, barsize]);
 
 	useEffect(() => {
 		window.addEventListener('scroll', () => controlNavbar());
@@ -54,28 +95,20 @@ export default function MenuBar() {
 		return () => {
 			window.removeEventListener('scroll', () => controlNavbar());
 		};
-	}, [controlNavbar, lastScrollY]);
+	}, [lastScrollY]);
 
 	return (
-		<nav className={`nav ${show && 'hidden_menu'}`} style={{top: `${top}em`}}>
+		// <nav className={"nav " + (absmode ? 'nav_abs' : 'nav_fix')} style={{top: `${top}em`, position: `${positionMode}`}} id="menubar" ref={ref_menubar}>
+		<nav className={"nav"} style={{top: `${top}em`}} id="menubar" ref={ref_menubar}>
 			<ul className="nav__menu">
-				<li className="nav__menu-item"><a>Home</a></li>
-				<li className="nav__menu-item"><a>Services</a>
-					<ul className="nav__submenu">
-						<li className="nav__submenu-item"><a>Web Design</a></li>
-						<li className="nav__submenu-item"><a>Web Development</a></li>
-						<li className="nav__submenu-item"><a>Web Hosting</a></li>
-					</ul>
-				</li>
-				<li className="nav__menu-item"><a>About</a>
-					<ul className="nav__submenu">
-						<li className="nav__submenu-item"><a>Our Company</a></li>
-						<li className="nav__submenu-item"><a>Our Team</a></li>
-						<li className="nav__submenu-item"><a>Our Reach</a></li>
-					</ul>
-				</li>
-				<li className="nav__menu-item"><a>Blog</a></li>
 				<li className="nav__menu-item"><a>Contact</a></li>
+				<li className="nav__menu-item"><a>Resume</a></li>
+				<li className="nav__menu-item"><a>Services</a></li>
+				<li className="nav__menu-item"><a>Examples</a>
+					<ul className="nav__submenu">
+						<li className="nav__submenu-item"><a>Image registration</a></li>
+					</ul>
+				</li>
 			</ul>
 		</nav>
 	);

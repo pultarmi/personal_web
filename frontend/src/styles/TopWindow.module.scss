@@ -23,10 +23,10 @@
     justify-content: flex-start;
     color: white;
     align-items: center;
-}
 
-.TopWindow > div {
-    flex-grow: 1;
+    > div {
+        flex-grow: 1;
+    }
 }
 
 .TopWindowLeft {
@@ -40,23 +40,21 @@
 a {
     all: unset;
     cursor: pointer;
-}
-a:hover {
-    text-decoration: underline;
-}
 
-.Profiles img{
-    width: 3vw;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .Profiles{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+
+    img{
+        width: 3vw;
+    }
 }
-
-
-
 
 
 .arrow {
@@ -66,6 +64,27 @@ a:hover {
     top: 90%;
     transform-origin: 90% 50%;
     transform: translate3d(-50%, -50%, 0);
+
+    &:before, &:after {
+        background: #fff;
+        content: '';
+        display: block;
+        height: 3px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+    }
+
+    &:before {
+        transform: rotate(45deg) translateX(-23%);
+        transform-origin: top left;
+    }
+
+    &:after {
+        transform: rotate(-45deg) translateX(23%);
+        transform-origin: top right;
+    }
 }
 
 .Arrows > div:nth-child(1) {
@@ -73,28 +92,6 @@ a:hover {
 }
 .Arrows > div:nth-child(2) {
     animation: arrow-movement 2s 1s ease-in-out infinite;
-}
-
-.arrow:before,
-.arrow:after {
-    background: #fff;
-    content: '';
-    display: block;
-    height: 3px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 30px;
-}
-
-.arrow:before {
-    transform: rotate(45deg) translateX(-23%);
-    transform-origin: top left;
-}
-
-.arrow:after {
-    transform: rotate(-45deg) translateX(23%);
-    transform-origin: top right;
 }
 
 @keyframes arrow-movement {
@@ -109,8 +106,3 @@ a:hover {
         opacity: 0;
     }
 }
-
-/*.Arrows{*/
-/*    position: relative;*/
-/*    top: 5vh;*/
-/*}*/

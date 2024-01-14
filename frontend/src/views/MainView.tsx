@@ -4,7 +4,7 @@ import { Outlet, Link } from "react-router-dom";
 import TopWindow from 'components/TopWindow';
 import TimelineBox from "components/TimelineBox";
 
-import styles from '../styles/TimelineWindow.module.css';
+import styles from '../styles/MainView.module.scss';
 
 
 export default function MainView() {
@@ -13,7 +13,7 @@ export default function MainView() {
 			<TopWindow/>
 
 			<div className={styles.TimelineWindow} id="my-other-component">
-				<hr width="5" size="800" style={{ position: 'absolute', zIndex: '0 !important', left: '50vw'}}></hr>
+				<hr></hr>
 				<TimelineBox topic="Quantasoft">
 					● Building real-time video analytics software capable of accomplishing crucial security tasks using optimized biometrics and detection models.
 				</TimelineBox>

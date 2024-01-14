@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-scroll";
 import { Link as LinkRouter } from "react-router-dom";
 
-import styles from "../styles/TopWindow.module.css";
+import styles from "../styles/TopWindow.module.scss";
 
 import linkedin from "../assets/linkedin.svg";
 import github from "../assets/github.svg";
