@@ -2,13 +2,11 @@
 
 .TimelineBox{
     position: relative;
-    //margin-left: auto;
-    //margin-right: 2rem;
-    box-shadow: 0px 0px 7px 10px $col2;
+    box-shadow: 7px 7px 7px 7px black;
 
     border-radius: 20px;
     padding: 20px;
-    width: 45%;
+    width: 70%;
     background-color: $col2;
     font-size: calc(10px + 1vmin);
 
@@ -18,15 +16,34 @@
 
     text-align: left;
 
-    //margin: 0 auto;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 
-    &:is(h1, h2, h3, h4, h5, h6){
-        //margin-top: 0px;
-        /*position: relative;*/
-        /*float: left;*/
-        /*width: 100%;*/
+    //&:is(h1, h2, h3, h4, h5, h6){
+    //    margin-bottom: 1rem;
+    //    margin-top: 1rem;
+    //}
+
+    div {
+        font-size: 0.9em;
+    }
+
+    h3 {
+        position: relative;
+    }
+
+    h3, div {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    hr {
+        position: relative;
+        height: 0.14rem;
+        background-color: black;
+        border: 0;
+        z-index: 10;
+        width: 100%;
     }
 }
 
@@ -36,17 +53,19 @@
 
 @media (min-width: 800px) {
     .TimelineBox{
-        margin-left: var(--box_margins);
+        //margin-left: var(--box_margins);
         margin-right: var(--box_margins);
-        float: right;
+        float: left;
+
+        //margin-left: 100px; /* Adjust the margin as needed */
+        //margin-top: 10px; /* Adjust the margin as needed */
     }
 
-    .TimelineRow:nth-child(odd) > div{
-        margin-right: var(--box_margins);
-        margin-left: var(--box_margins);
-        float: left;
-        /*background-color: #00ffff;*/
-    }
+    //.TimelineRow:nth-child(odd) > div{
+    //    margin-right: var(--box_margins);
+    //    margin-left: var(--box_margins);
+    //    float: left;
+    //}
 }
 
 /*@media (max-width: 1200px) {*/

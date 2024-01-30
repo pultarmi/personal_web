@@ -1,8 +1,21 @@
+@font-face {
+  font-family: poppins-xlight;
+  /*https://fonts.google.com/specimen/Poppins*/
+  src: url(assets/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: poppins-light;
+  /*https://fonts.google.com/specimen/Poppins*/
+  src: url(assets/Poppins-Light.ttf);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',*/
+  /*  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',*/
+  /*  sans-serif;*/
+  font-family: poppins-light;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

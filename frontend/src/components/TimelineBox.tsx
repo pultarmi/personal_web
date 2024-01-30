@@ -8,6 +8,7 @@ interface FadeInProps {
 	children: React.ReactNode;
 	topic: string;
 	leftAlign?: boolean;
+	style: any;
 }
 
 export default function TimelineBox(props: FadeInProps) {
@@ -18,8 +19,6 @@ export default function TimelineBox(props: FadeInProps) {
 			entries.forEach(entry => {
 				if (entry.isIntersecting && ref.current) {
 					ref.current.classList.add('is-visible');
-				} else {
-					ref.current?.classList.remove('is-visible');
 				}
 			});
 		});
@@ -37,9 +36,10 @@ export default function TimelineBox(props: FadeInProps) {
 
 	return (
 		// <Link to="/react" style={{ textDecoration: 'none' }}>
-		<div className={styles.TimelineRow}>
-			<div ref={ref} className={`${styles.TimelineBox} fade-in ${props.leftAlign ? "leftAlign" : ""}`}>
+		<div className={styles.TimelineRow} style={props.style}>
+			<div ref={ref} className={`${styles.TimelineBox} fade-in`}>
 				<h3>{props.topic}</h3>
+				<hr></hr>
 				<div>
 					{props.children}
 				</div>

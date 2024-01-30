@@ -1,16 +1,14 @@
 @import "globals";
 
-hr {
-  position: absolute;
-  z-index: 0;
-  left: 50vw;
-  width: 5px;
-  height: 800px;
-  top: 100px;
-}
 
 .WindowResume{
   position: relative; // needed for absolute positioning of <hr> to wrok
   display: flex;
   flex-direction: column;
+}
+
+h1 {
+  position: relative;
+  color: $col2;
+  //left: 500px;
 }

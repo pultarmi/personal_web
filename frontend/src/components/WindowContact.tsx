@@ -16,10 +16,11 @@ export default function WindowContact() {
   }
 
   return (
-    <div className={styles.TopWindow}>
+    <div className={styles.TopWindow} id="contact-div">
       <div>
         <div className={styles.TopWindowLeft}>
-          <img src={require('../assets/profile500.jpg')} className={styles.PageLogo} alt="logo"/>
+          <h2>Milan Pultar</h2>
+          <img src={require('../assets/profile500.png')} className={styles.PageLogo} alt="logo"/>
 
           <div className={styles.Profiles}>
             <a href="https://www.linkedin.com/in/milan-pultar/">
@@ -28,23 +29,24 @@ export default function WindowContact() {
             <a href="https://github.com/pultarmi?tab=repositories">
               <img src={github} alt="GitHub profile"></img>
             </a>
-        </div>
+          </div>
         </div>
       </div>
       <div>
-        <div className={styles.TopWindowBody}>
-          <h2>Milan Pultar</h2>
-          <LinkRouter to='#' onClick={runonClick} >
-            milan.pultar@gmail.com
-          </LinkRouter>
+      <div className={styles.TopWindowBody}>
+          <h2>
+            <LinkRouter to='#' onClick={runonClick}>
+              milan.pultar@gmail.com
+            </LinkRouter>
+          </h2>
           <h2>Software engineer</h2>
 
           <h2 style={{fontStyle: 'italic'}}>Building the future, one line at a time.</h2>
 
           <br></br>
-      </div>
+        </div>
 
-      <div className={styles.Arrows}>
+        <div className={styles.Arrows}>
         <div className={styles.arrow}></div>
         <div className={styles.arrow}></div>
       </div>

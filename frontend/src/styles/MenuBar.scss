@@ -1,5 +1,10 @@
 @import "globals";
 
+//:global {
+//  div {
+//  }
+//}
+
 html {
   box-sizing: border-box;
 }
@@ -10,84 +15,100 @@ html {
   box-sizing: border-box;
 }
 
-nav {
-  ul {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-
-//.hidden_menu {
-//  top: -3em;
-//}
-
-//.nav_abs{
-//  position: absolute;
-//  top: 1em;
-//}
-//
-//.nav_fix{
-//  position: fixed;
-//  top: -3em;
-//}
-
-.nav {
-  z-index: 2;
-  //width: 450px;
-  //margin: 0px;
-  //height: 3em;
-  border-radius: 10px;
-  //margin: 0 auto;
-  background: darken($col2, 10%);
-  color: $col1;
+.menubar {
+  z-index: 20;
+  //top: 20px;
+  //height: 20px;
+  background: $col1;
+  height: 4em;
   position: fixed;
-  left: 50%;
-  transform: translate(-50%, 0);
+  width: 100%;
   transition: top 0.3s;
+  //top: 0px;
 
-  a {
-    display: block;
-    padding: 0 16px;
-    line-height: inherit;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  &__menu {
-    line-height: 45px;
-    font-weight: 700;
-    text-transform: uppercase;
-
-    &-item {
-      display: inline-block;
-      position: relative;
-
-      &:hover {
-        background-color: $col1;
-        color: $col2;
-
-        .nav__submenu {
-          display: block;
-        }
-      }
+  .nav {
+    ul {
+      list-style: none;
+      //padding-left: 0;
+      //margin-top: 0;
+      //margin-bottom: 0;
     }
   }
 
-  &__submenu {
-    font-weight: 300;
-    text-transform: none;
-    display: none;
-    position: absolute;
-    width: 220px;
-    background-color: $col1;
+  .nav {
+    z-index: 2;
+    //background: darken($col2, 10%);
+    //background: $col2;
+    color: $col1;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    //padding: 0;
+    //margin: 0;
 
-    &-item {
-      &:hover {
-        //background: rgba($col1, 0.1);
-        background: $col1;
+    top: 0.4em;
+    display: inline-block;
+    border: 0.15em solid $col2;
+    border-radius: 12px;
+
+    a {
+      display: block;
+      padding: 0 16px;
+      line-height: inherit;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    &__menu {
+      //position: relative;
+      line-height: 45px;
+      font-weight: 700;
+      text-transform: uppercase;
+      //border: 10px $col2;
+      padding: 0;
+      margin: 0;
+
+      &-item {
+        background-color: $col2;
+        //border: 0;
+        //padding: 0;
+        //margin-left: 1px;
+
+        &:hover {
+          //background: rgba($col1, 0.1);
+          background: $col1;
+        }
+
+        display: inline-block;
+        //position: relative;
+
+        &:nth-child(1) {
+          border-radius: 10px 0 0 10px;
+        }
+
+        &:last-child {
+          border-radius: 0 10px 10px 0;
+        }
+
+        &:hover {
+          background-color: $col1;
+          color: $col2;
+          z-index: 2;
+
+          .nav__submenu {
+            display: block;
+          }
+        }
       }
+    }
+
+    &__submenu {
+      //font-weight: 300;
+      text-transform: none;
+      display: none;
+      position: absolute;
+      width: 220px;
+      background-color: $col1;
     }
   }
 }
