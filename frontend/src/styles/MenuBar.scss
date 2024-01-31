@@ -1,55 +1,28 @@
 @import "globals";
 
-//:global {
-//  div {
-//  }
-//}
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
 .menubar {
   z-index: 20;
-  //top: 20px;
-  //height: 20px;
   background: $col1;
   height: 4em;
   position: fixed;
   width: 100%;
   transition: top 0.3s;
-  //top: 0px;
-
-  .nav {
-    ul {
-      list-style: none;
-      //padding-left: 0;
-      //margin-top: 0;
-      //margin-bottom: 0;
-    }
-  }
 
   .nav {
     z-index: 2;
-    //background: darken($col2, 10%);
-    //background: $col2;
     color: $col1;
     position: relative;
     left: 50%;
     transform: translate(-50%, 0);
-    //padding: 0;
-    //margin: 0;
 
     top: 0.4em;
     display: inline-block;
     border: 0.15em solid $col2;
     border-radius: 12px;
+
+    ul {
+      list-style: none;
+    }
 
     a {
       display: block;
@@ -60,27 +33,19 @@ html {
     }
 
     &__menu {
-      //position: relative;
       line-height: 45px;
       font-weight: 700;
       text-transform: uppercase;
-      //border: 10px $col2;
       padding: 0;
       margin: 0;
 
       &-item {
         background-color: $col2;
-        //border: 0;
-        //padding: 0;
-        //margin-left: 1px;
+        display: inline-block;
 
         &:hover {
-          //background: rgba($col1, 0.1);
           background: $col1;
         }
-
-        display: inline-block;
-        //position: relative;
 
         &:nth-child(1) {
           border-radius: 10px 0 0 10px;
@@ -103,11 +68,13 @@ html {
     }
 
     &__submenu {
-      //font-weight: 300;
+      padding: 0;
+      overflow: hidden;
+      white-space: nowrap;
+
       text-transform: none;
       display: none;
       position: absolute;
-      width: 220px;
       background-color: $col1;
     }
   }

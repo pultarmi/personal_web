@@ -1,12 +1,17 @@
 @import "globals";
 
 .PageLogo {
-    height: 30vmin;
+    //height: 30vmin;
     padding: 0px;
     margin: 5vmin;
     border-radius: 10%;
     filter: drop-shadow(5px -5px 5px rgba(0, 0, 0, 0.87));
     box-shadow: 10px 10px 40px 10px $col3 inset;
+    width: auto;
+    height: auto;
+
+    max-width: 250px;
+    max-height: 250px;
 }
 
 .TopWindowBody {
@@ -29,11 +34,17 @@
 }
 
 .TopWindowLeft {
+    z-index: 20;
     float: right;
     display: flex;
     flex-direction: column;
-    /*align-items: center;*/
     align-content: space-evenly;
+    align-items: center;
+
+    h2 {
+        margin: 0;
+        text-align: center;
+    }
 }
 
 a {
@@ -45,16 +56,24 @@ a {
     }
 }
 
+//.BackgroundImage {
+//    width: 100vw;
+//    height: 100vh;
+//    position: fixed;
+//    object-fit: contain;
+//    z-index: -1;
+//}
+
 .Profiles{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: start;
 
     img{
         width: 3vw;
+        margin-right: 40px;
     }
 }
-
 
 .arrow {
     opacity: 0;

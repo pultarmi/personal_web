@@ -1,7 +1,7 @@
 @import "globals";
 
 
-.WindowResume{
+.WindowResume {
   position: relative; // needed for absolute positioning of <hr> to wrok
   display: flex;
   flex-direction: column;
@@ -10,5 +10,4 @@
 h1 {
   position: relative;
   color: $col2;
-  //left: 500px;
 }

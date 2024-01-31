@@ -1,8 +1,4 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import { Link } from "react-scroll";
-import MenuItem from '@mui/material/MenuItem';
 
 import "../styles/MenuBar.scss";
 
@@ -48,13 +44,12 @@ export default function MenuBar() {
 
 		window.addEventListener('scroll', handleScroll);
 
-		// cleanup function
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, [controlNavbar, minTop]);
 
-	const handleClick = itemName => event => {
+	const handleClick = (itemName: string) => (event: { preventDefault: () => void; }) => {
 		event.preventDefault();
 		let target = document.getElementById(itemName);
 		target!.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -65,9 +60,9 @@ export default function MenuBar() {
 			<nav className={"nav"}>
 				<ul className="nav__menu">
 					<li className="nav__menu-item"><a onClick={handleClick("contact-div")}>Contact</a></li>
-					<li className="nav__menu-item"><a>Services</a></li>
+					<li className="nav__menu-item"><a onClick={handleClick("services-div")}>Services</a></li>
 					<li className="nav__menu-item"><a onClick={handleClick("resume-div")}>Resume</a></li>
-					<li className="nav__menu-item"><a>Examples</a>
+					<li className="nav__menu-item"><a onClick={handleClick("examples-div")}>Examples</a>
 						<ul className="nav__submenu">
 							<li className="nav__submenu-item"><a>Image registration</a></li>
 						</ul>
