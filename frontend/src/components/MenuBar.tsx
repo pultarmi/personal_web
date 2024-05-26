@@ -57,6 +57,10 @@ export default function MenuBar() {
 
 	return (
 		<div style={{top: `${top}em`}} className={"menubar"} id="menubar" ref={ref_menubar}>
+			<div className={"mobile-nav"}>
+				Menu
+			</div>
+
 			<nav className={"nav"}>
 				<ul className="nav__menu">
 					<li className="nav__menu-item"><a onClick={handleClick("contact-div")}>Contact</a></li>

@@ -1,77 +1,134 @@
 @import "globals";
 
-.PageLogo {
-    //height: 30vmin;
-    padding: 0px;
-    margin: 5vmin;
-    border-radius: 10%;
-    filter: drop-shadow(5px -5px 5px rgba(0, 0, 0, 0.87));
-    box-shadow: 10px 10px 40px 10px $col3 inset;
-    width: auto;
-    height: auto;
 
-    max-width: 250px;
-    max-height: 250px;
-}
-
-.TopWindowBody {
-    padding: 10vmin;
-    font-size: calc(20px);
-    line-height: 2.0;
-}
-
-.TopWindow {
+.Content {
     min-height: 100vh;
     display: flex;
-    flex-direction: row;
     justify-content: flex-start;
     color: white;
     align-items: center;
 
+    @media (min-width: 800px) {
+        flex-direction: row;
+    }
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
+
     > div {
         flex-grow: 1;
     }
-}
 
-.TopWindowLeft {
-    z-index: 20;
-    float: right;
-    display: flex;
-    flex-direction: column;
-    align-content: space-evenly;
-    align-items: center;
+    .TopWindowLeft {
+        z-index: 20;
+        float: right;
+        display: flex;
+        flex-direction: column;
+        align-content: space-evenly;
+        align-items: center;
 
-    h2 {
-        margin: 0;
-        text-align: center;
+        h2 {
+            margin: 0;
+            text-align: center;
+        }
     }
-}
 
-a {
-    all: unset;
-    cursor: pointer;
+    .TopWindowBody {
+        font-size: calc(20px);
 
-    &:hover {
-        text-decoration: underline;
+        @media (min-width: 800px) {
+            text-align: left;
+            line-height: 2.0;
+            padding-left: 10vmin;
+        }
+
+        @media (max-width: 800px) {
+            text-align: center;
+            line-height: 1.0;
+            padding-left: 0;
+        }
+
+        .ContactText{
+            @media (min-width: 800px) {
+                text-align: left;
+            }
+
+            @media (max-width: 800px) {
+                text-align: center;
+            }
+        }
+
+        .Profiles{
+            display: flex;
+            flex-direction: row;
+            //align-items: start;
+
+            @media (min-width: 800px) {
+                justify-content: start;
+            }
+
+            @media (max-width: 800px) {
+                justify-content: space-between;
+                vertical-align: text-top;
+            }
+
+            img{
+                height: 40px;
+                @media (min-width: 800px) {
+                    margin-right: 40px;
+                }
+            }
+        }
+
+        a {
+            all: unset;
+            cursor: pointer;
+
+
+            display: block;
+            justify-content: center;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .SmallEmail {
+                display: none;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .BigEmail {
+                display: none;
+                height: 20px;
+            }
+
+            .SmallEmail, .SmallEmail * {
+                font-size: 35px;
+                line-height: 1;
+                //display: flex;
+                //align-items: center;
+                //margin-bottom: auto;
+                //margin-right: 40px;
+            }
+        }
     }
-}
 
-//.BackgroundImage {
-//    width: 100vw;
-//    height: 100vh;
-//    position: fixed;
-//    object-fit: contain;
-//    z-index: -1;
-//}
+    .PageLogo {
+        //height: 30vmin;
+        padding: 0px;
+        margin: 5vmin;
+        border-radius: 10%;
+        filter: drop-shadow(5px -5px 5px rgba(0, 0, 0, 0.87));
+        box-shadow: 10px 10px 40px 10px $col3 inset;
+        width: auto;
+        height: auto;
 
-.Profiles{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-
-    img{
-        width: 3vw;
-        margin-right: 40px;
+        max-width: 250px;
+        max-height: 250px;
     }
 }
 

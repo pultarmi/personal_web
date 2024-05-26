@@ -5,6 +5,8 @@
   position: relative; // needed for absolute positioning of <hr> to wrok
   display: flex;
   flex-direction: column;
+
+  //justify-content: center;
 }
 
 h1 {

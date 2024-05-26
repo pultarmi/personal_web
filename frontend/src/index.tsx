@@ -26,11 +26,11 @@ const App = () => {
 
   return (
     <div>
-      {windowWidth < 1000 ? (
-        <p>Mobile version is not ready. Please open on desktop with more than 1000px in width.</p>
-      ) : (
+      {/*{windowWidth < 1000 ? (*/}
+      {/*  <p>Mobile version is not ready. Please open on desktop with more than 1000px in width.</p>*/}
+      {/*) : (*/}
         <RouterProvider router={router} />
-      )}
+      {/*)}*/}
     </div>
   );
 };

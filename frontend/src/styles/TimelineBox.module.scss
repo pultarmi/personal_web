@@ -13,29 +13,36 @@
 
 :root {
     --box_margins: 10rem;
-    --box_big_size: 800px;
+
+    @media (min-width: 800px) {
+        --timeline-box-size: 700px;
+    }
+
+    @media (max-width: 800px) {
+        --timeline-box-size: 90vw;
+    }
 }
 
-.TimelineRow:nth-child(1) .TimelineBox {
-    margin-left: calc(1.2* (100vw - var(--box_big_size))/2);
-}
-.TimelineRow:nth-child(2) .TimelineBox {
-    margin-left: calc(0.8* (100vw - var(--box_big_size))/2);
-}
-.TimelineRow:nth-child(3) .TimelineBox {
-    margin-left: calc(1.0* (100vw - var(--box_big_size))/2);
-}
-.TimelineRow:nth-child(4) .TimelineBox {
-    margin-left: calc(1.4* (100vw - var(--box_big_size))/2);
+@media (min-width: 800px) {
+    .TimelineRow:nth-child(1) .TimelineBox {
+        margin-left: calc(1.2 * (100vw - var(--timeline-box-size)) / 2);
+    }
+    .TimelineRow:nth-child(2) .TimelineBox {
+        margin-left: calc(0.8 * (100vw - var(--timeline-box-size)) / 2);
+    }
+    .TimelineRow:nth-child(3) .TimelineBox {
+        margin-left: calc(1.0 * (100vw - var(--timeline-box-size)) / 2);
+    }
+    .TimelineRow:nth-child(4) .TimelineBox {
+        margin-left: calc(1.4 * (100vw - var(--timeline-box-size)) / 2);
+    }
 }
 
 .TimelineBox{
-    position: relative;
     box-shadow: 7px 7px 7px 7px black;
 
     border-radius: 20px;
     padding: 20px;
-    //width: 700px;
     background-color: $col2;
     font-size: calc(10px + 1vmin);
 
@@ -43,23 +50,22 @@
     flex-direction: column;
     justify-content: flex-start;
 
-    //text-align: left;
-
     margin-bottom: 1rem;
     margin-top: 1rem;
 
-    @media (min-width: 800px) {
-        width: var(--box_big_size);
+    width: var(--timeline-box-size);
+
+    @media (min-width: 900px) {
+        position: relative;
+        margin-right: var(--box_margins);
+        float: left;
     }
 
-    //transform: translate(-50%, 0);
-
-    //&:nth-child(1) {
-    //    margin-left: 50vw;
-    //}
-    //&:nth-child(2) {
-    //    margin-left: 40vw;
-    //}
+    @media (max-width: 900px) {
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     div {
         font-size: 0.9em;
@@ -83,18 +89,3 @@
         width: 100%;
     }
 }
-
-@media (min-width: 800px) {
-    .TimelineBox{
-        margin-right: var(--box_margins);
-        float: left;
-    }
-}
-
-/*@media (max-width: 1200px) {*/
-/*}*/
-
-/*.TimelineBox:hover{*/
-/*    cursor: pointer;*/
-/*    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;*/
-/*}*/

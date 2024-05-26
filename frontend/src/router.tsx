@@ -4,7 +4,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import MainView from "./views/MainView";
 import PageMenu from "./views/FoodMenu";
 import Project_Test from "./views/project1";
-import alignment from "./views/Alignment";
+// import alignment from "./views/Alignment";
 import DragDrop from "./views/Alignment";
 import MainLayout from "./layouts/MainLayout";
 
