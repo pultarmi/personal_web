@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, CSSProperties } from 'react';
 
 import "../styles/MenuBar.scss";
 
@@ -10,6 +10,7 @@ export default function MenuBar() {
 	const [fontsize, setFontsize] = useState(1);
 	const [barsize, setBarsize] = useState<number>(0)
 	const [minTop, setMinTop] = useState<number>(0)
+	const [menuVisible, setMenuVisible] = useState<boolean>(false);
 
 	const lastScrollY = useRef(0);
 
@@ -55,8 +56,12 @@ export default function MenuBar() {
 		target!.scrollIntoView({ behavior: 'smooth', block: 'start' });
 	};
 
+	const boxStyle: CSSProperties = {
+		'--position-variable': top.toString() + 'em',
+	} as CSSProperties;
+
 	return (
-		<div style={{top: `${top}em`}} className={"menubar"} id="menubar" ref={ref_menubar}>
+		<div style={boxStyle} className={"menubar"} id="menubar" ref={ref_menubar}>
 			<div className={"mobile-nav"}>
 				Menu
 			</div>

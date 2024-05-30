@@ -28,7 +28,7 @@ export default function WindowContact() {
   }
 
   return (
-    <div className={styles.Content}>
+    <div className={styles.MainDiv} id="contact-div">
       {/*<div>*/}
         <div className={styles.TopWindowLeft}>
           <h2>Milan Pultar</h2>
@@ -40,9 +40,9 @@ export default function WindowContact() {
       {/*</div>*/}
       {/*<div>*/}
         <div className={styles.TopWindowBody}>
-          <h1 className={styles.ContactText}>
-            Contact
-          </h1>
+          {/*<h1 className={styles.ContactText}>*/}
+          {/*  Contact*/}
+          {/*</h1>*/}
           <h2 className={styles.BigEmail}>
             <LinkRouter to='#' onClick={runonClick}>
               milan.pultar@gmail.com
@@ -59,7 +59,9 @@ export default function WindowContact() {
               <img src={github} alt="GitHub profile"></img>
             </a>
           </div>
-          <h2>+420 737 540 909</h2>
+          <h2><a>
+            +420 737 540 909
+          </a></h2>
           <br></br>
         </div>
         {/*<div className={styles.Arrows}>*/}

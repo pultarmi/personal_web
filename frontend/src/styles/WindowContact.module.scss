@@ -1,12 +1,12 @@
 @import "globals";
 
 
-.Content {
+.MainDiv {
     min-height: 100vh;
     display: flex;
-    justify-content: flex-start;
     color: white;
     align-items: center;
+    justify-content: center;
 
     @media (min-width: 800px) {
         flex-direction: row;
@@ -16,26 +16,28 @@
         flex-direction: column;
     }
 
-    > div {
-        flex-grow: 1;
-    }
+    //> div {
+    //    flex-grow: 1;
+    //}
 
     .TopWindowLeft {
         z-index: 20;
         float: right;
         display: flex;
         flex-direction: column;
-        align-content: space-evenly;
         align-items: center;
+        justify-content: space-evenly;
 
         h2 {
             margin: 0;
-            text-align: center;
         }
     }
 
     .TopWindowBody {
+        //padding: 10vmin;
+        padding: 0;
         font-size: calc(20px);
+        justify-content: center;
 
         @media (min-width: 800px) {
             text-align: left;
@@ -62,7 +64,6 @@
         .Profiles{
             display: flex;
             flex-direction: row;
-            //align-items: start;
 
             @media (min-width: 800px) {
                 justify-content: start;
@@ -109,10 +110,6 @@
             .SmallEmail, .SmallEmail * {
                 font-size: 35px;
                 line-height: 1;
-                //display: flex;
-                //align-items: center;
-                //margin-bottom: auto;
-                //margin-right: 40px;
             }
         }
     }
